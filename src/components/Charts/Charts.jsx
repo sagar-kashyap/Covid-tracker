@@ -15,8 +15,9 @@ const Charts=()=>{
         fetchAPI();
     });
     const lineChart=(
-        dailyData.length!==0
+        dailyData.length!==0    //check dailyData should not be empty
         ?
+        
         <Line 
         data={{labels:dailyData.map(({date})=>date),
         datasets:[{
