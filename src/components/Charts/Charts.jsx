@@ -32,7 +32,7 @@ const Charts=()=>{
             fill:true,
         }],}}>
 
-        </Line>:null
+        </Line>:null      /// if dailydata has some value then execute the Line command, if not then null
     );
 
 return(
