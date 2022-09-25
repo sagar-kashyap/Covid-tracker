@@ -32,3 +32,4 @@ export const fetchDailyData=async()=>{
         
     }
 }
+
