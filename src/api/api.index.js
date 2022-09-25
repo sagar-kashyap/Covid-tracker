@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url='https://covid19.mathdro.id/api';
+const url='https://covid19.mathdro.id/api'; //covid data api(recovery data in not being updated)
 
 export const fetchData= async ()=>{
     try {
@@ -32,4 +32,7 @@ export const fetchDailyData=async()=>{
         
     }
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> cbb0c8b69e697c4a8f0fa504d7705c7313878d11
