@@ -3,7 +3,7 @@ import styles from './App.module.css';
 import Cards from './components/Cards/Cards';
 import Charts from './components/Charts/Charts';
 import CountryPicker from './components/CountryPicker/CountryPicker';
-import {fetchData} from './api/api.index';
+import { fetchData} from './api/api.index';
 
 class App extends React.Component {
 
@@ -19,16 +19,19 @@ class App extends React.Component {
   }
 
   handleCountryChange=async(country)=>{
-    console.log(country);
+    const fetchedData=await fetchData(country);
+    console.log(fetchedData)
+     console.log(country)
+    this.setState({data:fetchedData, country:country})
   }
 
   render(){
-    const { data } =this.state;
+    const { data,country } =this.state;
     return (
       <div className={styles.container}>
         <Cards data={data} />
         <CountryPicker handleCountryChange={this.handleCountryChange}/>
-        <Charts />
+        <Charts data={data} country={this.handleCountryChange} />
   
       </div>
     );

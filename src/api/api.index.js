@@ -2,9 +2,14 @@ import axios from 'axios';
 
 const url='https://covid19.mathdro.id/api'; //covid data api(recovery data in not being updated)
 
-export const fetchData= async ()=>{
+export const fetchData= async (country)=>{
+    let changeableUrl=url;
+
+    if(country){
+        changeableUrl=`${url}/countries/${country}`
+    }
     try {
-        const {data:{confirmed,recovered,deaths,lastUpdate}}=await axios.get(url);
+        const {data:{confirmed,recovered,deaths,lastUpdate}}=await axios.get(changeableUrl);
         return{
             confirmed:confirmed,
             recovered:recovered,
@@ -13,7 +18,7 @@ export const fetchData= async ()=>{
         }
          
     } catch (error) {
-        
+        console.log(error)
     }
 }
 
