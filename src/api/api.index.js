@@ -29,10 +29,18 @@ export const fetchDailyData=async()=>{
 
         return modifiedData;
     } catch (error) {
-        
+        console.log(error);
     }
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> cbb0c8b69e697c4a8f0fa504d7705c7313878d11
+export const fetchCountries=async()=>{
+    try {
+        const response=await axios.get(`${url}/countries`);
+        
+        const {data:{countries}}=await axios.get(`${url}/countries`)
+        console.log(countries)
+        return countries.map((country)=>country.name);
+    } catch (error) {
+        console.log(error)
+    }
+}
