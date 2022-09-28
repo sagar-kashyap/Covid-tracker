@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from 'react';
 import {fetchDailyData} from '../../api/api.index';
 import {Line,Bar} from 'react-chartjs-2';
+import {Chart as ChartJS} from 'chart.js/auto';
 
 import styles from './Charts.module.css';
 
@@ -45,12 +46,12 @@ const Charts=({data:{confirmed,recovered,deaths},country})=>{
                 labels:['Infected','Recovered','Deaths'],
                 datasets:[{
                     label:'people',
-                    backgroundColour:[
-                        'rgb(0,0,255,0.5)',
-                        'rgb(0,255,0,0.5)',
-                        'rgb(255,0,0,0.5)'
+                    backgroundColor:[
+                        'rgba(0,0,255,0.5)',
+                        'rgba(0,255,0,0.5)',
+                        'rgba(255,0,0,0.5)'
                     ],
-                    data:[confirmed,recovered,deaths]
+                    data:[confirmed.value,recovered.value,deaths.value]
                 }]
             }}
             options={{
@@ -65,7 +66,7 @@ const Charts=({data:{confirmed,recovered,deaths},country})=>{
 
 return(
         <div className={styles.container}>
-            {country ? barChart : lineChart}
+            {country?barChart:lineChart}
         </div>   
         
     )
