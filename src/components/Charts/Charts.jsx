@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from 'react';
 import {fetchDailyData} from '../../api/api.index';
 import {Line,Bar} from 'react-chartjs-2';
-import {Chart as ChartJS} from 'chart.js/auto';
+// import {Chart as ChartJS} from 'chart.js/auto';
 
 import styles from './Charts.module.css';
 
@@ -14,6 +14,7 @@ const Charts=({data:{confirmed,recovered,deaths},country})=>{
         }
         
         fetchAPI();
+        
     },[]);
     const lineChart=(
         dailyData.length!==0    //check dailyData should not be empty
