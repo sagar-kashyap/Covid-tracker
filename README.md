@@ -1,3 +1,5 @@
+View it yourself- https://covid-tracker-app-asdg.netlify.app/
+
 # This website gives you the live update on recovery, deaths and patients from covid-19.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
